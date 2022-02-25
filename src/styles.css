@@ -1,0 +1,29 @@
+body {
+  text-align: center;
+}
+.enter-city {
+  margin: 200px 50px 20px 50px;
+}
+h1,
+h2 {
+  text-align: center;
+  font-family: "Inria Sans", sans-serif;
+}
+.current-temperature {
+  font-size: 40px;
+}
+.what-to-expect {
+  margin: 200px 50px;
+}
+.sun-icon {
+  color: yellow;
+  font-size: 50px;
+}
+.cloud-sun-icon {
+  color: rgb(71, 255, 240);
+  font-size: 50px;
+}
+.rain-icon {
+  color: grey;
+  font-size: 50px;
+}
