@@ -39,3 +39,10 @@ h2 {
   text-decoration: underline;
   cursor: pointer;
 }
+.weather-app {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #54ae9f;
+  border-radius: 5px;
+}
