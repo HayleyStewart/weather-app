@@ -78,7 +78,14 @@ function showSearchedWeather(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+}
+
 enterCity("Wellington");
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click, displayFahrenheitTemperature");
 
 //took this out:
 //let h1 = document.querySelector("h1");
