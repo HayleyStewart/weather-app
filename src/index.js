@@ -70,6 +70,12 @@ function showSearchedWeather(response) {
   let currentWindSpeed = Math.round(response.data.wind.speed);
   let cityWindSpeed = document.querySelector("#current-wind-speed");
   cityWindSpeed.innerHTML = `${currentWindSpeed} km/h`;
+  let iconElement = document.querySelector("#current-weather-icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 enterCity("Wellington");
