@@ -1,4 +1,7 @@
-body {
+.current-location-button {
+  text-align: right;
+}
+.displayed-city-and-conditions {
   text-align: center;
 }
 .enter-city {
@@ -14,6 +17,7 @@ h2 {
 }
 .what-to-expect {
   margin: 200px 50px;
+  text-align: center;
 }
 .sun-icon {
   color: yellow;
@@ -27,15 +31,16 @@ h2 {
   color: grey;
   font-size: 50px;
 }
-.sourceCodeInfo {
+.source-code-info {
   font-family: sans-serif;
   font-size: 15px;
+  text-align: center;
 }
-.openSourceCode {
+.open-source-code {
   font-weight: 900;
   text-decoration: none;
 }
-.openSourceCode:hover {
+.open-source-code:hover {
   text-decoration: underline;
   cursor: pointer;
 }

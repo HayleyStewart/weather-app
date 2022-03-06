@@ -28,49 +28,60 @@
     <div class="container">
       <div class="weather-app">
         <form class="enter-city" id="type-city">
+          <div class="current-location-button">
+            <button
+              type="current"
+              id="current-location"
+              class="btn btn-success"
+            >
+              Reset to current location
+            </button>
+          </div>
+          <br />
           <div class="row">
-            <div class="col-4">
+            <div class="col-9">
               <input
                 type="text"
                 id="enter-city-input"
                 placeholder="Enter city here"
                 autocomplete="off"
+                class="form-control"
               />
             </div>
-            <div class="col-4">
-              <button type="search" id="search-button" class="btn btn-primary">
-                Search
-              </button>
-            </div>
-            <div class="col-4">
+            <div class="col-3">
               <button
-                type="current"
-                id="current-location"
-                class="btn btn-success"
+                type="search"
+                id="search-button"
+                class="btn btn-primary"
+                w-100
               >
-                Right here, right now
+                Search
               </button>
             </div>
           </div>
         </form>
-        <h1></h1>
-        <h2 id="date">Last updated at:</h2>
-        <br />
-        <div class="row">
-          <div class="col">
-            <div class="current-temperature" id="current-temp">
-              19
-              <span class="units"
-                >°C | <a href="#" id="fahrenheit-link">°F</a></span
-              >
+        <div class="displayed-city-and-conditions">
+          <h1></h1>
+          <h2 id="date">Last updated at:</h2>
+          <br />
+          <div class="row">
+            <div class="col">
+              <div class="current-temperature" id="current-temp">
+                19
+                <span class="units"
+                  >°C | <a href="#" id="fahrenheit-link">°F</a></span
+                >
+              </div>
             </div>
-          </div>
-          <div class="col">
-            <img src="" alt="Clear" id="current-weather-icon" />
-          </div>
-          <div class="col">
-            <div class="current-humidity" id="current-humidity">55% RH</div>
-            <div class="current-wind-speed" id="current-wind-speed">5 km/h</div>
+            <div class="col">
+              <img src="" alt="Clear" id="current-weather-icon" />
+            </div>
+            <div class="col">
+              <div class="current-humidity" id="current-humidity">55% RH</div>
+              <div class="current-wind-speed" id="current-wind-speed">
+                5 km/h
+              </div>
+            </div>
           </div>
         </div>
         <div class="what-to-expect">
@@ -104,9 +115,9 @@
           </div>
         </div>
       </div>
-      <div class="sourceCodeInfo">
+      <div class="source-code-info">
         <a
-          class="openSourceCode"
+          class="open-source-code"
           href="https://github.com/HayleyStewart/weather-app"
           target="_blank"
         >
