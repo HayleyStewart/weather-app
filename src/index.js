@@ -53,7 +53,13 @@ function formatDate(currentDate) {
   let month = months[currentDate.getMonth()];
   let date = currentDate.getDate();
   let hour = currentDate.getHours();
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
   let minute = currentDate.getMinutes();
+  if (minute < 10) {
+    minute = `0${minute}`;
+  }
   let h2 = document.querySelector("h2");
   h2.innerHTML = `${day} ${date} ${month} ${hour}:${minute}`;
 }
