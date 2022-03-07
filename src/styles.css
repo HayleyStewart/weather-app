@@ -15,6 +15,19 @@ h2 {
 .current-temperature {
   font-size: 40px;
 }
+.weather-temperature .units {
+  position: relative;
+  font-size: 17px;
+  top: -17px;
+}
+.weather-temperature .active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
 .what-to-expect {
   margin: 200px 50px;
   text-align: center;

@@ -26,12 +26,6 @@ function findCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
-let enterCityForm = document.querySelector("#type-city");
-enterCityForm.addEventListener("submit", handleSubmit);
-
-let currentLocationButton = document.querySelector("#current-location");
-currentLocationButton.addEventListener("click", findCurrentLocation);
-
 let now = new Date();
 function formatDate(currentDate) {
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -67,9 +61,10 @@ formatDate(now);
 
 function showSearchedWeather(response) {
   document.querySelector("h1").innerHTML = response.data.name;
-  let currentTemp = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+  let currentTemp = Math.round(celsiusTemperature);
   let cityTemp = document.querySelector("#current-temp");
-  cityTemp.innerHTML = `${currentTemp}°C`;
+  cityTemp.innerHTML = `${currentTemp}`;
   let currentHumidity = Math.round(response.data.main.humidity);
   let cityHumidity = document.querySelector("#current-humidity");
   cityHumidity.innerHTML = `${currentHumidity} %RH`;
@@ -86,12 +81,36 @@ function showSearchedWeather(response) {
 
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  let currentTemp = document.querySelector("#current-temp");
+  currentTemp.innerHTML = Math.round(fahrenheitTemperature);
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
 }
 
-enterCity("Wellington");
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  let cityTemp = document.querySelector("#current-temp");
+  cityTemp.innerHTML = Math.round(celsiusTemperature);
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+}
+
+let enterCityForm = document.querySelector("#type-city");
+enterCityForm.addEventListener("submit", handleSubmit);
+
+let currentLocationButton = document.querySelector("#current-location");
+currentLocationButton.addEventListener("click", findCurrentLocation);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click, displayFahrenheitTemperature");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusTemperature = null;
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+enterCity("Wellington");
 
 //took this out:
 //let h1 = document.querySelector("h1");
