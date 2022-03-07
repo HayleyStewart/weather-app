@@ -71,6 +71,9 @@ function showSearchedWeather(response) {
   let currentWindSpeed = Math.round(response.data.wind.speed);
   let cityWindSpeed = document.querySelector("#current-wind-speed");
   cityWindSpeed.innerHTML = `${currentWindSpeed} km/h`;
+  let currentDescription = response.data.weather[0].description;
+  let cityWeatherDescription = document.querySelector("#current-description");
+  cityWeatherDescription.innerHTML = `${currentDescription}`;
   let iconElement = document.querySelector("#current-weather-icon");
   iconElement.setAttribute(
     "src",
