@@ -99,6 +99,29 @@ function displayCelsiusTemperature(event) {
   celsiusLink.classList.add("active");
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+      <div class="weather-forecast-date">${day}</div>
+      <i class="fas fa-sun sun-icon"></i>
+      <div class="weather-forecast-temperatures">
+      <span class="weather-forecast-temperatures-max">18°</span>
+      <span class="weather-forecast-temperatures-min">12°</span>
+    </div>
+  </div>
+`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 let enterCityForm = document.querySelector("#type-city");
 enterCityForm.addEventListener("submit", handleSubmit);
 
@@ -114,6 +137,7 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 enterCity("Wellington");
+displayForecast();
 
 //took this out:
 //let h1 = document.querySelector("h1");
