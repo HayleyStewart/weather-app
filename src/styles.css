@@ -31,9 +31,20 @@ h2 {
 .current-description:first-letter {
   text-transform: capitalize;
 }
-.what-to-expect {
-  margin: 200px 50px;
+.weather-forecast {
+  margin: 60px 50px;
   text-align: center;
+  color: black;
+}
+.weather-forecast-date {
+  font-size: 16px;
+  opacity: 0.5;
+}
+.weather-forecast-temperatures {
+  font-size: 13px;
+}
+.weather-forecast-temperatures-min {
+  opacity: 0.5;
 }
 .sun-icon {
   color: yellow;
