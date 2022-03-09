@@ -59,6 +59,12 @@ function formatDate(currentDate) {
 }
 formatDate(now);
 
+function getForecast(coordinates) {
+  let apiKey = "5bff8c5201df4ca815f7b284a8ea6f2f";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function showSearchedWeather(response) {
   document.querySelector("h1").innerHTML = response.data.name;
   celsiusTemperature = response.data.main.temp;
@@ -80,6 +86,8 @@ function showSearchedWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 function displayFahrenheitTemperature(event) {
@@ -99,7 +107,8 @@ function displayCelsiusTemperature(event) {
   celsiusLink.classList.add("active");
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -137,7 +146,6 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 enterCity("Wellington");
-displayForecast();
 
 //took this out:
 //let h1 = document.querySelector("h1");
