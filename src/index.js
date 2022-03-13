@@ -26,8 +26,8 @@ function findCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
-let now = new Date();
-function formatDate(currentDate) {
+function formatDate(timestamp) {
+  let currentDate = new Date(timestamp);
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let months = [
     "Jan",
@@ -54,10 +54,8 @@ function formatDate(currentDate) {
   if (minute < 10) {
     minute = `0${minute}`;
   }
-  let h2 = document.querySelector("h2");
-  h2.innerHTML = `${day} ${date} ${month} ${hour}:${minute}`;
+  return `${day} ${date} ${month} ${hour}:${minute}`;
 }
-formatDate(now);
 
 function getForecast(coordinates) {
   let apiKey = "5bff8c5201df4ca815f7b284a8ea6f2f";
@@ -67,6 +65,8 @@ function getForecast(coordinates) {
 
 function showSearchedWeather(response) {
   document.querySelector("h1").innerHTML = response.data.name;
+  let dateElement = document.querySelector("#date");
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
   celsiusTemperature = response.data.main.temp;
   let currentTemp = Math.round(celsiusTemperature);
   let cityTemp = document.querySelector("#current-temp");
@@ -138,11 +138,3 @@ let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", findCurrentLocation);
 
 enterCity("Wellington");
-
-//took this out:
-//let h1 = document.querySelector("h1");
-// if (enterCityHere.value) {
-// h1.innerHTML = `${enterCityHere.value}`;
-// } else {
-//  h1.innerHTML = null;
-// alert("Please type a city");
