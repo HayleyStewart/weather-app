@@ -22,7 +22,7 @@ function searchLocation(position) {
   axios.get(apiUrl).then(showSearchedWeather);
 }
 
-function findCurrentLocation(event) {
+function findCurrentLocation() {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
