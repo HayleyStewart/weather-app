@@ -73,10 +73,10 @@ function showSearchedWeather(response) {
   cityTemp.innerHTML = `${currentTemp}`;
   let currentHumidity = Math.round(response.data.main.humidity);
   let cityHumidity = document.querySelector("#current-humidity");
-  cityHumidity.innerHTML = `${currentHumidity} %RH`;
+  cityHumidity.innerHTML = `Humidity: ${currentHumidity} %`;
   let currentWindSpeed = Math.round(response.data.wind.speed);
   let cityWindSpeed = document.querySelector("#current-wind-speed");
-  cityWindSpeed.innerHTML = `${currentWindSpeed} km/h`;
+  cityWindSpeed.innerHTML = `Wind speed: ${currentWindSpeed} km/h`;
   let currentDescription = response.data.weather[0].description;
   let cityWeatherDescription = document.querySelector("#current-description");
   cityWeatherDescription.innerHTML = `${currentDescription}`;
@@ -117,7 +117,7 @@ function displayForecast(response) {
       <div class="weather-forecast-temperatures">
       <span class="weather-forecast-temperatures-max">${Math.round(
         forecastDay.temp.max
-      )}°</span>
+      )}°</span> / 
       <span class="weather-forecast-temperatures-min">${Math.round(
         forecastDay.temp.min
       )}°</span>

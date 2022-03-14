@@ -6,7 +6,13 @@ h2 {
 .current-location-button {
   text-align: right;
 }
+
+.btn-success {
+  background: #506f86;
+}
+
 .displayed-city-and-conditions {
+  font-family: "Inria Sans", sans-serif;
   margin-top: 60px;
   text-align: center;
 }
@@ -14,6 +20,9 @@ h2 {
   margin: 60px 50px 20px 50px;
 }
 
+.btn-primary {
+  background: #393e46;
+}
 .current-temperature {
   font-size: 60px;
 }
@@ -23,23 +32,24 @@ h2 {
   position: relative;
   top: -30px;
 }
+
 .current-description:first-letter {
   text-transform: capitalize;
 }
 .weather-forecast {
-  color: black;
+  color: #393e46;
   margin: 50px;
   text-align: center;
 }
 .weather-forecast-date {
+  font-family: "Inria Sans", sans-serif;
   font-size: 20px;
-  opacity: 0.5;
 }
 .weather-forecast-temperatures {
   font-size: 15px;
 }
 .weather-forecast-temperatures-min {
-  opacity: 0.5;
+  opacity: 0.6;
 }
 .source-code-info {
   font-family: sans-serif;
@@ -55,7 +65,8 @@ h2 {
   text-decoration: underline;
 }
 .weather-app {
-  border: 5px solid #54ae9f;
+  background: #8fb1e9;
+  border: 5px solid #2f3c4f;
   border-radius: 5px;
   margin: 0 auto;
   max-width: 600px;
