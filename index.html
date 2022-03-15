@@ -28,18 +28,8 @@
     <div class="container">
       <div class="weather-app">
         <form class="enter-city" id="type-city">
-          <div class="current-location-button">
-            <button
-              type="current"
-              id="current-location"
-              class="btn btn-success"
-            >
-              Current city
-            </button>
-          </div>
-          <br />
           <div class="row">
-            <div class="col-9">
+            <div class="col-8">
               <input
                 type="text"
                 id="enter-city-input"
@@ -52,10 +42,19 @@
               <button
                 type="search"
                 id="search-button"
-                class="btn btn-primary"
+                class="btn btn-secondary"
                 w-100
               >
                 Search
+              </button>
+            </div>
+            <div class="col-1">
+              <button
+                type="current"
+                id="current-location"
+                class="btn btn-primary"
+              >
+                <i class="fas fa-map-marker-alt" aria-hidden="true"> </i>
               </button>
             </div>
           </div>
@@ -80,9 +79,11 @@
               />
             </div>
             <div class="col">
-              <div class="current-humidity" id="current-humidity"></div>
-              <div class="current-wind-speed" id="current-wind-speed"></div>
-              <div class="current-description" id="current-description"></div>
+              <div class="current-conditions-list">
+                <div class="current-humidity" id="current-humidity"></div>
+                <div class="current-wind-speed" id="current-wind-speed"></div>
+                <div class="current-description" id="current-description"></div>
+              </div>
             </div>
           </div>
         </div>
